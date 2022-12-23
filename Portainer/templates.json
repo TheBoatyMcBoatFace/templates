@@ -1,0 +1,46 @@
+{
+  "version": "1",
+  "templates": [
+	  {
+		"type": 1,
+		"title": "PostgreSQL",
+		"description": "The most advanced open-source database",
+		"categories": ["database"],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+		"image": "postgres:latest",
+		"env": [
+		  {
+			"name": "POSTGRES_USER",
+			"label": "Superuser"
+		  },
+		  {
+			"name": "POSTGRES_PASSWORD",
+			"label": "Superuser password"
+		  }
+		],
+		"ports": ["5432/tcp"],
+		"volumes": [
+		  {
+			"container": "/var/lib/postgresql/data"
+		  }
+		]
+	  },
+	  {
+		"type": 1,
+		"title": "Ghost",
+		"description": "Free and open-source blogging platform",
+		"categories": ["blog"],
+		"note": "Access the blog management interface under <code>/ghost/</code>.",
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ghost.png",
+		"image": "ghost:latest",
+		"ports": ["2368/tcp"],
+		"volumes": [
+		  {
+			"container": "/var/lib/ghost/content"
+		  }
+		]
+	  }
+  ]
+  }
